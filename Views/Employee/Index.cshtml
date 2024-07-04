@@ -1,0 +1,35 @@
+﻿@model List<DemoMvcApp.Models.Employee>
+
+@{
+}
+
+<h1>Employees</h1>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>Date of Birth</th>
+            <th>Department</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Employee employee in Model)
+        {
+            <tr>
+                <td>@employee.Name</td>
+                <td>@employee.Email</td>
+                <td>@employee.Salary</td>
+                <td>@employee.DataOfBirth.ToString("yyyy-MM-dd")</td>
+                <td>@employee.Department</td>
+                <td>
+                    <a class="btn btn-success fw-bold" href="Employee/View/@employee.Id">View</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
